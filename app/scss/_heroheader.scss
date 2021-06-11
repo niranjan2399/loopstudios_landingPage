@@ -1,0 +1,146 @@
+.hero_header {
+  padding-inline: 1.5rem;
+  padding-top: 2.5rem;
+  width: 100%;
+  height: 40.625rem;
+  background-image: url("../../images/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include for-tablet-portrait-up {
+    background-image: url("../../images/desktop/image-hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @include for-tablet-landscape-up {
+    padding-inline: 4rem;
+  }
+
+  @include for-mid-desktop-up {
+    padding-inline: 10.25rem;
+  }
+
+  .overlay {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    left: 0;
+    top: 0;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    @include for-desktop-up {
+      margin-top: 1.5rem;
+    }
+
+    .logo {
+      width: 9rem;
+
+      @include for-desktop-up {
+        height: 2.125rem;
+        width: auto;
+      }
+    }
+
+    .hamburger {
+      @include for-desktop-up {
+        display: none;
+      }
+    }
+  }
+
+  .a_tags {
+    @media (max-width: 1023px){
+      visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 11.5rem;
+      z-index: 1;
+      font-family: $font-jose;
+      text-transform: uppercase;
+      font-size: 1.25rem;
+    }
+
+    @include for-desktop-up {
+      display: block;
+    }
+    
+    a {
+      position: relative;
+      text-decoration: none;
+      color: $white;
+      
+      @media (max-width: 1023px){
+        &:not(:first-child){
+          margin-top: 1.875rem;
+        }
+      }
+
+      @include for-desktop-up {
+        &:not(:last-child) {
+          margin-right: 1.75rem;
+        }
+
+        &:hover {
+          &::after {
+            content: "";
+            position: absolute;
+            height: 0.2rem;
+            background-color: $white;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bottom_bar 0.2s linear forwards;
+          }
+        }
+      }
+    }
+  }
+  .intro {
+    padding: 1.5rem;
+    border: 2px solid $white;
+    margin-top: 10.125rem;
+    flex: 1;
+
+    @include for-tablet-portrait-up {
+      width: 70%;
+      padding: 1.5rem 2rem;
+    }
+
+    @include for-desktop-up {
+      width: 40.75rem;
+      padding: 2.5rem 3rem;
+    }
+
+    span {
+      font-size: 1.875rem;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-family: $font-jose;
+      color: $white;
+
+      @include for-tablet-portrait-up{
+        font-size: 2.5rem;
+      }
+
+      @include for-tablet-landscape-up {
+        font-size: 3rem;
+        letter-spacing: 0.2rem;
+      }
+      @include for-desktop-up {
+        font-size: 4rem;
+        letter-spacing: 0.2rem;
+      }
+    }
+  }
+}
