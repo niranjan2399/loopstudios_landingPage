@@ -1,13 +1,27 @@
-html{
-    box-sizing: border-box;
+html {
+  box-sizing: border-box;
 }
 
-*,*::before,*::after{
-    box-sizing: inherit;
-    padding: 0;
-    margin: 0;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
 }
 
-body{
-    font-family: $font-alata;
+body {
+  font-family: $font-alata;
+  max-width: 90rem;
+  margin-inline: auto;
+}
+
+h2 {
+  font-family: $font-jose;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.1rem;
+  @include for-desktop-up {
+    font-size: 2.25rem;
+  }
 }

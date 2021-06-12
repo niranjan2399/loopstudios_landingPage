@@ -1,0 +1,115 @@
+.section_2 {
+  margin-top: 6rem;
+  margin-inline: 1.5rem;
+  padding: 0;
+
+  @include for-tablet-landscape-up {
+    margin-inline: 4rem;
+  }
+
+  @include for-desktop-up {
+    margin-top: 8rem;
+  }
+
+  @include for-mid-desktop-up {
+    margin-inline: 10.25rem;
+    margin-top: 11.25rem;
+  }
+
+  h2:first-child {
+    margin-bottom: 3.4375rem;
+
+    @include for-tablet-landscape-up{
+      text-align: left;
+    }
+  }
+
+  .grid {
+    display: grid;
+    @media (max-width: 799px){
+      gap: 1.5rem;
+    }
+
+    @include for-tablet-landscape-up {
+      grid-template-columns: auto auto auto;
+      gap: 1.875rem;
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: auto auto auto auto;
+    }
+
+    .grid_image {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to right, rgba(black, 0.8), transparent);
+
+        @include for-tablet-landscape-up {
+          background: linear-gradient(to top, rgba(black, 0.8), transparent);
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        &::after{
+          background: none;
+        }
+
+        img {
+          opacity: 0.4;
+        }
+
+        h2 {
+          color: black;
+        }
+      }
+
+      img {
+        position: relative;
+        width: 100%;
+      }
+
+      h2 {
+        position: absolute;
+        bottom: 1.625rem;
+        left: 1.375rem;
+        text-align: left;
+        z-index: 1;
+        color: $white;
+        width: 8.5rem;
+
+        @include for-desktop-up {
+          width: 13rem;
+        }
+      }
+    }
+  }
+
+  button{
+    text-transform: uppercase;
+    font-family: $font-alata;
+    border: 1px solid black;
+    font-size: .875rem;
+    letter-spacing: .2rem;
+    margin-top: 2rem;
+    background-color: white;
+    color: black;
+    padding: .8rem 2.8rem;
+    display: block;
+    margin-inline: auto;
+
+    &:hover{
+      cursor: pointer;
+      background-color: black;
+      color: $white;
+    }
+  }
+}

@@ -30,6 +30,7 @@
     background-color: black;
     left: 0;
     top: 0;
+    z-index: 1;
   }
 
   nav {
@@ -37,6 +38,7 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    z-index: 1;
 
     @include for-desktop-up {
       margin-top: 1.5rem;

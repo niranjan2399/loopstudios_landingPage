@@ -1,0 +1,87 @@
+.footer {
+  padding-top: 3.5rem;
+  margin-top: 5.875rem;
+  background-color: black;
+
+  @include for-desktop-up {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2.75rem;
+    padding-inline: 4rem;
+    padding-bottom: 2.75rem;
+  }
+
+  @include for-mid-desktop-up {
+    padding-inline: 10.25rem;
+  }
+
+  .left {
+    text-align: center;
+
+    @include for-desktop-up {
+      text-align: left;
+    }
+
+    img {
+      width: auto;
+      height: 1.5rem;
+      margin-bottom: 1.875rem;
+    }
+
+    .a_tags {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+
+      @include for-desktop-up {
+        text-align: left;
+        flex-direction: row;
+      }
+
+      a {
+        font-size: 0.9375rem;
+        text-decoration: none;
+        color: $white;
+
+        &:not(:last-child) {
+          margin-bottom: 1.3rem;
+
+          @include for-desktop-up {
+            margin-bottom: 0;
+            font-size: 1rem;
+          }
+        }
+
+        @include for-desktop-up {
+          margin-right: 1.875rem;
+        }
+      }
+    }
+  }
+
+  .right {
+    margin-top: 3.125rem;
+    padding-bottom: 3.625rem;
+    color: $darkgrey;
+    font-size: 0.9375rem;
+    text-align: center;
+
+    @include for-desktop-up {
+      margin-top: 0;
+      text-align: right;
+      padding-bottom: 0;
+    }
+
+    .logos {
+      margin-bottom: 1.25rem;
+
+	  @include for-desktop-up{
+		  margin-bottom: 1.875rem;
+	  }
+
+      & img:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
