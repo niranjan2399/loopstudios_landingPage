@@ -30,19 +30,19 @@
       position: absolute;
       bottom: 0;
       right: 0;
-	  width: 30rem;
+      width: 30rem;
       padding-inline: 0;
-	  padding-left: 5rem;
-	  padding-top: 5rem;
+      padding-left: 5rem;
+      padding-top: 5rem;
       background-color: $white;
       margin-top: 0;
     }
 
-	@media (min-width: 1200px){
-		width: 33.875rem;
-		padding-top: 6.125rem;
-		padding-left: 6rem;
-	}
+    @media (min-width: 1200px) {
+      width: 33.875rem;
+      padding-top: 6.125rem;
+      padding-left: 6rem;
+    }
 
     p {
       font-size: 0.875rem;
@@ -52,10 +52,10 @@
       line-height: 1.8;
       letter-spacing: 0.5px;
 
-	  @include for-tablet-landscape-up{
-		  width: 80%;
-		  margin-inline: auto;
-	  }
+      @include for-tablet-landscape-up {
+        width: 80%;
+        margin-inline: auto;
+      }
 
       @include for-desktop-up {
         text-align: left;

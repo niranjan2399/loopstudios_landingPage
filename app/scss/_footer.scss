@@ -6,7 +6,8 @@
   @include for-desktop-up {
     display: flex;
     justify-content: space-between;
-    padding-top: 2.75rem;
+    margin-top: 11.5rem;
+    padding-top: 2.625rem;
     padding-inline: 4rem;
     padding-bottom: 2.75rem;
   }
@@ -26,6 +27,10 @@
       width: auto;
       height: 1.5rem;
       margin-bottom: 1.875rem;
+
+      @include for-desktop-up {
+        margin-bottom: 1.5rem;
+      }
     }
 
     .a_tags {
@@ -42,6 +47,24 @@
         font-size: 0.9375rem;
         text-decoration: none;
         color: $white;
+        
+        @include for-desktop-up {
+          margin-right: 1.875rem;
+          position: relative;
+
+          &:hover {
+            &::after {
+              content: "";
+              position: absolute;
+              height: 0.2rem;
+              background-color: $white;
+              bottom: -1rem;
+              left: 50%;
+              transform: translateX(-50%);
+              animation: bottom_bar 0.2s linear forwards;
+            }
+          }
+        }
 
         &:not(:last-child) {
           margin-bottom: 1.3rem;
@@ -50,10 +73,6 @@
             margin-bottom: 0;
             font-size: 1rem;
           }
-        }
-
-        @include for-desktop-up {
-          margin-right: 1.875rem;
         }
       }
     }
@@ -75,13 +94,36 @@
     .logos {
       margin-bottom: 1.25rem;
 
-	  @include for-desktop-up{
-		  margin-bottom: 1.875rem;
-	  }
-
-      & img:not(:last-child) {
-        margin-right: 1rem;
+      @include for-desktop-up {
+        margin-bottom: 1.5rem;
       }
+
+      .logo {
+        display: inline-block;
+        position: relative;
+
+        &:hover {
+          &::after {
+            content: "";
+            position: absolute;
+            height: 0.2rem;
+            background-color: $white;
+            bottom: -.6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: logos 0.2s linear forwards;
+          }
+        }
+        
+        img{
+          cursor: pointer;
+        }
+
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+
     }
   }
 }
